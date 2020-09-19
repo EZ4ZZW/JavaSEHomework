@@ -25,6 +25,82 @@ public class Circle {
         isVisible = false;
     }
 
+    public void moveRight(int dis) {
+        moveHorizontal(dis);
+    }
+
+    public void moveLeft(int dis) {
+        moveHorizontal(-dis);
+    }
+
+    public void moveUp(int dis) {
+        moveVertical(-dis);
+    }
+
+    public void moveDown(int dis) {
+        moveVertical(dis);
+    }
+
+
+    public void moveHorizontal(int dis) {
+        erase();
+        xPoint += dis;
+        draw();
+    }
+
+    public void moveVertical(int dis) {
+        erase();
+        yPoint += dis;
+        draw();
+    }
+
+    public void slowMoveVertical(int dis) {
+
+        int per;
+
+        if (dis > 0) per = 5;
+        else per = -5;
+
+//        if (dis > 0) per = 1;
+//        else per = -1;
+
+
+        dis = (dis > 0 ? dis : Math.abs(dis));
+
+        for (int i = 0; i < dis; i++) {
+            Canvas.wait(500);
+            yPoint += per;
+            draw();
+        }
+    }
+
+    public void slowMoveHorizontal(int dis) {
+
+        int per;
+
+        if (dis > 0) per = 1;
+        else per = -1;
+
+        dis = (dis > 0 ? dis : Math.abs(dis));
+
+        for (int i = 0; i < dis; i++) {
+            Canvas.wait(500);
+            xPoint += per;
+            draw();
+        }
+    }
+
+    public void changeColor(String newColor) {
+        color = newColor;
+        draw();
+    }
+
+    public void changeSize(int d) {
+        erase();
+        r = d;
+        draw();
+    }
+
     private void draw() {
         if (isVisible) {
             Canvas canvas = Canvas.getSingleCanvas();

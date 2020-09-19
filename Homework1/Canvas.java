@@ -12,7 +12,7 @@ public class Canvas {
     // get the singleCanvas to draw
     public static Canvas getSingleCanvas() {
         if (singleCanvas == null) {
-            singleCanvas = new Canvas("JavaSE", 1000, 800, Color.white);
+            singleCanvas = new Canvas("Homework", 1000, 800, Color.white);
         }
         singleCanvas.setVisible(true);
         return singleCanvas;
@@ -96,7 +96,7 @@ public class Canvas {
         try {
             Thread.sleep(millisecond);
         } catch (Exception e) {
-
+            // do something
         }
     }
 
