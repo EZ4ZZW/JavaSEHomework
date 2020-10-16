@@ -26,6 +26,9 @@ public class TicketCmd {
                 case "3":
                     ticketMachine.refundBalance();
                     break;
+                default:
+                    System.out.println("Please input the right operation number!");
+                    break;
             }
         }
     }

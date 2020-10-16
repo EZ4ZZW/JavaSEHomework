@@ -4,6 +4,10 @@ public class Trapezoid {
     myPoint a, b, c, d;
     myPoint point = new myPoint(0, 0);
     Trapezoid(myPoint a, myPoint b, myPoint c, myPoint d) {
+        if (b.y != a.y || c.y != d.y) {
+            System.out.println("illegal!!! \n this trapezoid is illegal!");
+            return;
+        }
         this.a = a;
         this.b = b;
         this.c = c;
